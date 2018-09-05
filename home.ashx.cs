@@ -53,7 +53,7 @@ namespace Splashdown.Lights.Web
 		[MethodPage("stop")]
 		public void StopMethod()
 		{
-            ForwardRequest();
+			ForwardRequest();
 			Global.Stop();
 		}
 
@@ -75,7 +75,7 @@ namespace Splashdown.Lights.Web
 		[MethodPage("seteffect")]
 		public void SetEffectsMethod()
 		{
-            ForwardRequest();
+			ForwardRequest();
 			var name = Read("name");
 			Global.SetEffectName(name);
 		}
@@ -104,7 +104,7 @@ namespace Splashdown.Lights.Web
 		[MethodPage("setspeed")]
 		public void SetSpeedMethod()
 		{
-            ForwardRequest();
+			ForwardRequest();
 			double d;
 			if (double.TryParse(Read("value"), out d)) Global.SetSpeed(d);
 		}
@@ -112,7 +112,7 @@ namespace Splashdown.Lights.Web
 		[MethodPage("setlength")]
 		public void SetLengthMethod()
 		{
-            ForwardRequest();
+			ForwardRequest();
 			double d;
 			if (double.TryParse(Read("value"), out d)) Global.SetLength(d);
 		}
@@ -120,7 +120,7 @@ namespace Splashdown.Lights.Web
 		[MethodPage("setbrightness")]
 		public void SetBrightnessMethod()
 		{
-            ForwardRequest();
+			ForwardRequest();
 			double d;
 			if (double.TryParse(Read("value"), out d)) Global.SetBrightness(d);
 		}
@@ -128,7 +128,7 @@ namespace Splashdown.Lights.Web
 		[MethodPage("setsaturation")]
 		public void SetSaturationMethod()
 		{
-            ForwardRequest();
+			ForwardRequest();
 			double d;
 			if (double.TryParse(Read("value"), out d)) Global.SetSaturation(d);
 		}
@@ -136,7 +136,7 @@ namespace Splashdown.Lights.Web
 		[MethodPage("setcolor")]
 		public void SetColor1Method()
 		{
-            ForwardRequest();
+			ForwardRequest();
 			int index;
 			if (TryRead<int>("index", out index))
 				Global.SetColor(Read("value"), index);
