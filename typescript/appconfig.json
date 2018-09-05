@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "system",
+        "sourceMap": true,
+        "outFile": "build/app.js",
+        "removeComments": true,
+        "watch": false,
+        "lib": ["dom", "es2015.promise", "es5"]
+    },
+    "include": [
+        "**/app/app.ts"
+    ]
+}

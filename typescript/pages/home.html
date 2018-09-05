@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Light Editor</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta name="boot" content="/typescript/build/app.js">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/typescript/styles/home.css" media="all">
+</head>
+
+<body>
+    <div id="frame">
+        <div id="pixels"></div>
+        <div id="back" class="flip">
+            <div id="controls">
+                <div id="title" class="digital">no program selected</div>
+                <div id="colors" class="control">
+                    <div class="label">Colors:</div>
+                    <input id="color1" type="color">
+                    <input id="color2" type="color">
+                    <input id="color3" type="color">
+                </div>
+                <div id="speed" class="control">
+                    <div class="label">Speed:</div>
+                    <div class="digital"><span class="associate">1</span>X</div>
+                    <div class="slider"><div class="knob"></div></div>
+                </div>
+                <div id="length" class="control">
+                    <div class="label">Length:</div>
+                    <div class="digital"><span class="associate">100</span>%</div>
+                    <div class="slider"><div class="knob"></div></div>
+                </div>
+                <div id="brightness" class="control">
+                    <div class="label">Brightness:</div>
+                    <div class="digital"><span class="associate">100</span>%</div>
+                    <div class="slider"><div class="knob"></div></div>
+                </div>
+                <div id="saturation" class="control">
+                    <div class="label">Saturation:</div>
+                    <div class="digital"><span class="associate">100</span>%</div>
+                    <div class="slider"><div class="knob"></div></div>
+                </div>
+                <div id="done">done with settings</div>
+            </div>
+        </div>
+        <div id="pipe" class="flip"></div>
+        <div id="shadow" class="flip"></div>
+        <div id="front">
+            <div id="terminal">
+                <i id="fullscreen" class="fa fa-search-plus"></i>
+                <div class="prompt"><span class="w">Linux raspberrypi 4.14.52-v7+ #1123 SMP Wed Jun 27 17:35:49 BST 2018 armv7l<br>
+                    Last login: <span id="stamp"></span> from 192.168.1.75</span>
+                </div>
+                <div class="prompt">pi@raspberrypi<span class="w">:<span class="b">~/projects/lights</span>$ ls</span></div>
+                <div id="programs" class="prompt">
+                    <!-- program items go here -->
+                </div>
+                <div class="prompt">pi@raspberrypi<span class="w">:<span class="b">~/projects/lights</span>$ ls /bin</span>
+                </div>
+                <div class="prompt">
+                    <div class="program" onclick="commands.reset()">reset</div>
+                    <div class="program" onclick="commands.settings()">settings</div>
+                    <div class="program" onclick="commands.stop()">stop</div>
+                </div>
+                <div class="prompt"><span class="w" id="help">status: no program selected</span></div>
+            </div>
+        </div>
+        <div id="edge"></div>
+    </div>
+    <script type="text/javascript" src="/typescript/build/boot.js"></script>
+</body>
+
+</html>

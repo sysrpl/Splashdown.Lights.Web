@@ -1,0 +1,46 @@
+.associate {
+    float: left;
+    margin-right: 10px;
+    width: 70px;
+    text-align: left;
+    font-family: digital;
+    color: lime;
+    font-size:  20px;
+    background: black;
+    padding: 4px;
+    padding-left: 12px;
+    border-radius: 2px;
+    border-left: 1px solid #5d5d5d;
+    border-top: 1px solid #4c4c4c;
+    border-right: 1px solid #848383;
+    border-bottom: 1px solid #928f8f;
+}
+
+.slider {
+    position: relative;
+    float: left;
+    width: 200px;
+    height: 24px;
+    border-radius: 12px;
+    background: black;
+    border-left: 1px solid #5d5d5d;
+    border-top: 1px solid #4c4c4c;
+    border-right: 1px solid #848383;
+    border-bottom: 1px solid #928f8f;
+}
+
+.slider .knob {
+    position: absolute;
+    margin: 2px;
+    width: 18px;
+    height: 18px;
+    border-radius: 9px;
+    border: 1px solid transparent;
+    background: #464646;
+    transition: background-color 0.5s;
+}
+
+.slider .knob:hover, .slider .knob.pressed {
+    background: steelblue;
+    transition: background-color 0.5s;
+}

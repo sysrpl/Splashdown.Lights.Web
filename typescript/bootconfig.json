@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "system",
+        "sourceMap": true,
+        "declaration": true,
+        "declarationDir": "source/typings",
+        "outDir": "build",
+        "stripInternal": true,
+        "watch": false
+    },
+    "include": [
+        "source/boot/boot.ts"
+    ]
+}

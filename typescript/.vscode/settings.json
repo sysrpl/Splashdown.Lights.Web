@@ -1,0 +1,16 @@
+// Workspace settings
+{
+    "files.exclude": {
+        "**/bin": true,
+        "**/obj": true,
+        "**/Components": true,
+        "**/Utilities": true,
+        "**/.history": true,
+        "**/*.cs": true,
+        "**/*.asax": true,
+        "**/*.ashx": true,
+        "**/*.csproj": true,
+        "**/created": true,
+        "**/modified": true
+    }  
+}

@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css?family=Proza+Libre');
+@import url('https://fonts.googleapis.com/css?family=VT323');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+@font-face {
+    font-family: 'digital';
+    src: url('/typescript/fonts/digital-7-webfont.woff2') format('woff2'),
+         url('/typescript/fonts/digital-7-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border: 0;
+}
+
+body {
+    background: #d0cac0;
+    color: black;
+    font-family: "Proza Libre";
+    font-size: 16px;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;    
+    user-select: none;
+}
+
+#frame {
+    width: 1340px;
+    height: 720px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -670px;
+    margin-top: -360px;
+    perspective: 2000px;
+    background: url(/typescript/images/frame.png);
+}
+
+#pixels {
+    position: relative;
+    width: 1216px;
+    height: 598px;
+    opacity: 0.5;
+    margin: 60px;
+    margin-left: 62px;
+}
+
+#pixels div {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+}
+
+#pipe {
+    width: 134px;
+    height: 550px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -67px;
+    margin-top: -276px;
+    pointer-events: none;
+    background: url(/typescript/images/pipe.png);
+}
+
+#front, #back, #shadow {
+    width: 958px;
+    height: 516px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -479px;
+    margin-top: -258px;
+    transition: transform 3s, background-color 3s;
+    backface-visibility: hidden;
+}
+
+#edge {
+    width: 30px;
+    height: 514px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -15px;
+    margin-top: -257px;
+    background: silver;
+    transform: rotateY(0deg) translateX(-479px) rotateY(-90deg);
+    backface-visibility: hidden;
+    transition: transform 3s, background-color 3s;
+ }
+
+#front {
+    transform: rotateY(0);
+    background: url(/typescript/images/front.png);
+}
+
+#back {
+    transform: rotateY(0);
+    background: url(/typescript/images/back2.png);
+}
+
+#front.flip  {
+    transform: rotateY(180deg);
+    transition: transform 3s, background-color 3s;
+}
+
+#back.flip  {
+    transform: rotateY(-180deg);
+    transition: transform 3s, background-color 3s;
+}
+
+#edge.flip  {
+    background: black;
+    transform: rotateY(180deg) translateX(-479px) rotateY(-90deg);
+    transition: transform 3s, background-color 3s;
+}
+
+#shadow {
+    pointer-events: none;
+    transform: rotateY(0);
+    background: transparent;
+    transition: transform 3s, background-color 3s;
+}
+
+#shadow.flip {
+    transform: rotateY(-180deg);
+    background: black;
+    transition: transform 3s, background-color 3s;
+}
+
+#terminal {
+    position: absolute;
+    width: 934px;
+    height: 480px;
+    left: 50%;
+    top: 50%;
+    margin-left: -467px;
+    margin-top: -240px;
+    font-family: 'Roboto Mono';
+    font-size: 17px;
+    color: #21ea21;
+}
+
+#terminal.expand {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    margin-left: 0;
+    margin-top: 0;
+}
+
+#fullscreen {
+    position: absolute;
+    right: 5px;
+    cursor: pointer;
+}
+
+#fullscreen.fa-search-minus {
+    top: 5px;
+}
+
+.prompt {
+    padding-left: 10px;
+    padding-right: 10px;
+    clear: both;
+}
+
+.prompt .w {
+    color: white;
+}
+
+.prompt .b {
+    color: #82bbea;
+}
+
+.prompt .program {
+    font-weight: bold;
+    border: 2px solid black;
+    border-radius: 6px;
+    float: left;
+    width: 146px;
+    cursor: pointer;
+    transition: all 0.2s;
+    padding-left: 0.5em;
+    /* padding-right: 1em; */
+    margin-right: 1em;
+    padding-bottom: 4px;
+    margin-top: 2px;
+    text-transform: lowercase;
+    transition: all 0.2s;
+}
+
+.prompt .program.selected {
+    border: 2px dashed #21ea21;
+    color: #21ea21;
+    background: black;
+    transition: all 0.2s;
+}
+
+.prompt .program.selected:hover, .prompt .program:hover {
+    border: 2px solid #21ea21;
+    color: black;
+    background: #21ea21;
+    transition: all 0.2s;
+}
+
+#frame.expand, #frame.expand #front, #frame.expand #terminal {
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+}
+
+#controls {
+    position: relative;
+}
+
+#controls .control {
+    position: absolute;
+}
+
+.control .label {
+    float: left;
+    margin-right: 10px;
+    text-align: right;
+    width: 100px;
+    color: #e4e4e4;
+    text-shadow: 1px 2px black;
+    font-size: 17px;
+    font-weight: bolder;
+    line-height: 32px;
+}
+
+.digital {
+    float: left;
+    margin-right: 10px;
+    width: 70px;
+    text-align: left;
+    font-family: digital;
+    color: lime;
+    font-size:  20px;
+    background: black;
+    padding: 4px;
+    padding-left: 12px;
+    border-radius: 2px;
+    border-left: 1px solid #5d5d5d;
+    border-top: 1px solid #4c4c4c;
+    border-right: 1px solid #848383;
+    border-bottom: 1px solid #928f8f;
+}
+
+.slider {
+    position: relative;
+    float: left;
+    width: 200px;
+    height: 24px;
+    border-radius: 12px;
+    background: black;
+    border-left: 1px solid #5d5d5d;
+    border-top: 1px solid #4c4c4c;
+    border-right: 1px solid #848383;
+    border-bottom: 1px solid #928f8f;
+}
+
+.slider .knob {
+    position: absolute;
+    margin: 2px;
+    width: 18px;
+    height: 18px;
+    border-radius: 9px;
+    border: 1px solid transparent;
+    background: #464646;
+    transition: background-color 0.5s;
+}
+
+.slider .knob:hover, .slider .knob.pressed {
+    background: steelblue;
+    transition: background-color 0.5s;
+}
+
+#title {
+    position: absolute;
+    width: 400px;
+    left: 25px;
+    top: 30px;
+}
+
+#colors {
+    left: 25px;
+    top: 80px;
+}
+
+#colors input {
+    float: left;
+    margin-right: 18px;
+    width: 77px;
+    text-align: left;
+    color: lime;
+    font-size:  20px;
+    background: black;
+    padding: 4px;
+    /* padding-left: 12px; */
+    border-radius: 2px;
+    border-left: 1px solid #5d5d5d;
+    border-top: 1px solid #4c4c4c;
+    border-right: 1px solid #848383;
+    border-bottom: 1px solid #928f8f;
+}
+
+#speed {
+    left: 25px;
+    top: 130px;
+}
+
+#length {
+    left: 25px;
+    top: 180px;
+}
+
+#brightness {
+    left: 25px;
+    top: 230px;
+}
+
+#saturation {
+    left: 25px;
+    top: 280px;
+}
+
+#done {
+    position: absolute;
+    left: 62px;
+    top: 330px;
+    width: 353px;
+    border-radius: 15px;
+    border: 1px solid #a23838;
+    background: linear-gradient(to top, #a90329 0%,#8f0222 44%,#6d0019 100%);
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 1px 1px black;
+    line-height: 26px;
+    box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.75);    
+    transition: all 0.3s;
+}
+
+#done:hover {
+    border-color: #d68282;
+    transition: all 0.3s;
+}
+
+#done:active {
+    color:silver;
+    border-color: #532b2b;
+    transition: all 0.3s;
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings>
+  <effect name="barbershop">
+    <color1>#FF0000</color1>
+    <color2>#FFFFFF</color2>
+    <color3>#FFFFFF</color3>
+    <speed>1</speed>
+    <length>1</length>
+    <brightness>1</brightness>
+    <saturation>1</saturation>
+  </effect>
+  <effect name="cabinet">
+    <color1>#008080</color1>
+    <color2>#800080</color2>
+    <color3>#008000</color3>
+    <speed>5</speed>
+    <length>10</length>
+    <brightness>1</brightness>
+    <saturation>1</saturation>
+  </effect>
+  <effect name="gelatin">
+    <color1>#0000FF</color1>
+    <color2>#008000</color2>
+    <color3>#FFFFFF</color3>
+    <speed>5</speed>
+    <length>1</length>
+    <brightness>1</brightness>
+    <saturation>1</saturation>
+  </effect>
+</settings>

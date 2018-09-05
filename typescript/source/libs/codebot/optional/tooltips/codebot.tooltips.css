@@ -1,0 +1,60 @@
+/* This is an example css file for the optional tooltip files */
+
+#tipbox {
+    padding: 8px;
+    border-radius: 6px;
+    background: #f1f1a9;
+    border: 1px solid #b7b76c;
+    padding: 6px;
+    color: #75752c;
+    font-size: 13px;
+    position: absolute;
+    z-index: 99;
+    display: inline-block;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+    left: 0;
+    top: 0;
+    max-width: 300px;
+    text-align: center;
+}
+
+#tipbox.fixed {
+    max-width: 5000px;
+}
+
+#tipbox.visible {
+    opacity: 1;
+    transition: opacity 0.3s; 
+}
+
+#tipbox #tip-above, #tipbox #tip-below {
+    position: absolute;
+    left: 50%;
+    margin-left: -12px;
+} 
+
+#tipbox.left {
+    margin-left: -22px;
+}
+
+#tipbox.left #tip-above, #tipbox.left #tip-below {
+    left: 20px;
+} 
+
+#tipbox #tip-above {
+    bottom: -12.5px;
+}
+
+#tipbox #tip-below {
+    top: -12.5px;
+}
+
+#tipbox.below #tip-above {
+    display: none;
+}
+
+#tipbox.above #tip-below {
+    display: none;
+}

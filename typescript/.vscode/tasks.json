@@ -1,0 +1,43 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "make all",
+            "type": "shell",
+            "command": "./make.sh",
+            "group": "build",
+            "presentation": {
+                "showReuseMessage": false,
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "make boot",
+            "type": "shell",
+            "command": "./make.sh boot",
+            "group": "build",
+            "presentation": {
+                "showReuseMessage": false,
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "make app",
+            "type": "shell",
+            "command": "./make.sh app",
+            "group": "build",
+            "presentation": {
+                "showReuseMessage": false,
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        }
+    ]
+}
